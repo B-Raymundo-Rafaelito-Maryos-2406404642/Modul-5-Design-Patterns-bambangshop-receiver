@@ -77,7 +77,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement receive function in Notification controller.`
     -   [x] Commit: `Implement list_messages function in Notification service.`
     -   [x] Commit: `Implement list function in Notification controller.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -99,3 +99,20 @@ Here are the questions for this reflection:
     Rust does not allow us to mutate the content of a static variable via a static function because it is not thread-safe. Rust's ownership and borrowing rules ensure that static variables are immutable by default, and any mutation would require explicit synchronization mechanisms like RwLock<> or Mutex<> to ensure thread safety.
 
 #### Reflection Subscriber-2
+1. Have you explored things outside of the steps in the tutorial, for example: src/lib.rs? If not, explain why you did not do so. If yes, explain things that you have learned from those other parts of code.
+
+    Answer:
+
+    Yes, I have explored things outside of the steps in the tutorial, such as src/lib.rs. I learned about the different modules and their functionalities, which helped me understand the overall structure of the codebase better. For instance, I learned about the use of lazy_static to define static variables and how to use RwLock<> for synchronization. Furthermore, I learned about the use of the rocket framework for building web applications in Rust. I noticed how the `Cargo.toml` manages dependencies and how the project is structured to separate concerns between the controller, service, and repository layers. I also saw how `src/main.rs` initializes the Rocket application by mounting routes and managing the state, while `src/lib.rs` acts as the crate root that exposes the necessary modules.
+
+2. Since you have completed the tutorial by now and have tried to test your notification system by spawning multiple instances of Receiver, explain how Observer pattern eases you to plug in more subscribers. How about spawning more than one instance of Main app, will it still be easy enough to add to the system?
+
+    Answer:
+
+    The Observer pattern eases the process of adding more subscribers because it allows the Main app to notify all subscribers without having to know the details of each subscriber. This makes it easy to add new subscribers to the system. However, spawning more than one instance of the Main app would require additional coordination to ensure that notifications are not duplicated or lost.
+
+3. Have you tried to make your own Tests, or enhance documentation on your Postman collection? If you have tried those features, tell us whether it is useful for your work (it can be your tutorial work or your Group Project).
+
+    Answer:
+
+    Yes, I have tried to make my own Tests and enhance documentation on my Postman collection. It is useful for my work because it helps me to ensure that my API endpoints are working correctly and provides clear documentation for other members to use.
