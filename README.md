@@ -66,7 +66,7 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Create Notification database and Notification repository struct skeleton.`
     -   [x] Commit: `Implement add function in Notification repository.`
     -   [x] Commit: `Implement list_all_as_string function in Notification repository.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
+    -   [x] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -85,5 +85,17 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+Here are the questions for this reflection:
+1. In this tutorial, we used RwLock<> to synchronise the use of Vec of Notifications. Explain why it is necessary for this case, and explain why we do not use Mutex<> instead?
+
+    Answer:
+
+    It is necessary because we need to allow multiple threads to read the Vec of Notifications simultaneously, but only one thread to write to it at a time. If we use Mutex<>, we would have to lock the entire Vec for both reading and writing, which would be less efficient.
+
+2. In this tutorial, we used lazy_static external library to define Vec and DashMap as a “static” variable. Compared to Java where we can mutate  the content of a static variable via a static function, why did not Rust allow us to do so?
+
+    Answer:
+
+    Rust does not allow us to mutate the content of a static variable via a static function because it is not thread-safe. Rust's ownership and borrowing rules ensure that static variables are immutable by default, and any mutation would require explicit synchronization mechanisms like RwLock<> or Mutex<> to ensure thread safety.
 
 #### Reflection Subscriber-2
